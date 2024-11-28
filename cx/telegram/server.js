@@ -8,7 +8,7 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 
 const SERVER_URL = process.env.SERVER_URL;
 
-const { structProtoToJson } = require("./proto_to_json.js");
+const  structProtoToJson  = require("./proto_to_json.js").structProtoToJson;
 
 const express = require("express");
 const axios = require("axios");
@@ -72,7 +72,6 @@ async function convertToTelegramMessage(responses, chatId) {
         reply["chat_id"] = chatId;
         break;
       }
-
       default:
     }
     if (reply) {
